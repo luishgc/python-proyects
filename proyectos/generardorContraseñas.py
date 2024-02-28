@@ -1,26 +1,27 @@
+import string
 import random
 
-numeros = [0,1,2,3,4,5,6,7,8,9]
-letras = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"]
-simbolos = ["#","$","%","&","/","()","=","@","|","!","¡","?"]
-
-totalNumeros = int(input("¿Cuantos numeros necesitas en tu contraseña? "))
-totalLetras = int(input("¿Cuantas letras?"))
-totalSimbolos = int(input("¿Cuantos simbolos?"))
+totalPasswords = int(input("Cuantas contraseñas necesitas: "))
+totalLetras = int(input("Ingrese total letras: ")) 
+totalNumeros = int(input("Ingrese total numeros: ")) 
+totalSimbolos = int(input("Ingrese total simbolos: ")) 
 
 
-numerosSeleccionados = random.sample(numeros, totalNumeros)
-numerosSeleccionadosPulidos = int(''.join(map(str, numerosSeleccionados[:totalNumeros])))
-print(numerosSeleccionadosPulidos)
+caracteres = []
 
-letrasSeleccionadas = random.sample(letras, totalLetras)
-letrasSeleccionadasPulidas = ''.join(letrasSeleccionadas)
-print(letrasSeleccionadasPulidas)
 
-simbolosSeleccionados = random.sample(simbolos, totalSimbolos)
-simbolosSeleccionadosPulidos = ''.join(simbolosSeleccionados)
-print(simbolosSeleccionadosPulidos)
+caracteres.extend(random.choices(string.digits,k = totalNumeros))
+caracteres.extend(random.choices(string.ascii_letters,k = totalLetras))
+caracteres.extend(random.choices(string.punctuation ,k = totalSimbolos))
 
-passwordTotal = f"{numerosSeleccionadosPulidos}{letrasSeleccionadasPulidas}{simbolosSeleccionadosPulidos}"
 
-print(f"tu contraseña es la siguiente {passwordTotal}")
+random.shuffle(caracteres)
+ 
+password = ''.join(caracteres)
+
+for i in range(1,totalPasswords + 1) :
+    random.shuffle(caracteres)
+ 
+    password = ''.join(caracteres)
+   
+    print( i, ":  " , password)
