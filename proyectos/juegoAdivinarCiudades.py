@@ -1,3 +1,6 @@
+#adivinar la palabra, mostrar espacios en blanco de la lista de palabras a adivinar, si la palabra existe ir rellenando la palabra 
+
+
 import random
 
 palabras = ["cusco","arequipa","lima","ica"]
@@ -20,3 +23,4 @@ while True:
     intentos += 1
 print("Lo conseguiste en: ", intentos, "intentos")
 
+            
