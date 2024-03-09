@@ -1,3 +1,5 @@
+#generar una cantidad de contraseñas indicando el numero de letras simbolos y numeros
+
 import string
 import random
 

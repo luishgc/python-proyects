@@ -1,4 +1,5 @@
-#adivinar la palabra, mostrar espacios en blanco de la lista de palabras a adivinar, si la palabra existe ir rellenando la palabra 
+#adivinar la palabra, mostrar espacios en blanco de la lista de palabras a adivinar, 
+#si la palabra existe ir rellenando la palabra 
 
 
 import random
@@ -9,7 +10,7 @@ palabraVacia = "_" * len(palabraRandom)
 palabraLista = list(palabraVacia)
 intentos = 1
 while True:
-    letra = input("Ingresa letra: ").lower()
+    letra = input()
     if letra in palabraRandom:
         for i in range(len(palabraRandom)):
             if palabraRandom[i] == letra:
